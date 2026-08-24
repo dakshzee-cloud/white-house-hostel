@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
+
 import {
   Menu,
   X,
@@ -22,9 +23,9 @@ function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
 
-  // -----------------------------------------
+  // =========================================
   // SCROLL
-  // -----------------------------------------
+  // =========================================
 
   useEffect(() => {
     const handleScroll = () => {
@@ -38,9 +39,9 @@ function Navbar() {
     };
   }, []);
 
-  // -----------------------------------------
+  // =========================================
   // NAVBAR ENTRANCE ANIMATION
-  // -----------------------------------------
+  // =========================================
 
   useGSAP(
     () => {
@@ -90,9 +91,9 @@ function Navbar() {
     }
   );
 
-  // -----------------------------------------
+  // =========================================
   // MOBILE MENU ANIMATION
-  // -----------------------------------------
+  // =========================================
 
   useEffect(() => {
     if (!mobileMenuRef.current) return;
@@ -142,9 +143,9 @@ function Navbar() {
     }
   }, [menuOpen]);
 
-  // -----------------------------------------
+  // =========================================
   // CLOSE MENU
-  // -----------------------------------------
+  // =========================================
 
   const closeMenu = () => {
     setMenuOpen(false);
@@ -159,7 +160,9 @@ function Navbar() {
     >
       <div className="navbar-container">
 
-        {/* LOGO */}
+        {/* =====================================
+            LOGO
+        ===================================== */}
 
         <Link
           to="/"
@@ -167,6 +170,7 @@ function Navbar() {
           onClick={closeMenu}
         >
           <div className="brand-mark">
+
             <svg
               viewBox="0 0 50 60"
               fill="none"
@@ -196,6 +200,7 @@ function Navbar() {
                 strokeWidth="2"
               />
             </svg>
+
           </div>
 
           <div className="brand-text">
@@ -204,7 +209,10 @@ function Navbar() {
           </div>
         </Link>
 
-        {/* DESKTOP NAV */}
+
+        {/* =====================================
+            DESKTOP NAV
+        ===================================== */}
 
         <nav className="desktop-navigation">
 
@@ -254,10 +262,13 @@ function Navbar() {
 
         </nav>
 
-        {/* BOOK BUTTON */}
+
+        {/* =====================================
+            DESKTOP BOOK BUTTON
+        ===================================== */}
 
         <Link
-          to="/contact"
+          to="/book"
           className="booking-button"
         >
           <CalendarDays size={17} />
@@ -267,7 +278,10 @@ function Navbar() {
           </span>
         </Link>
 
-        {/* MOBILE BUTTON */}
+
+        {/* =====================================
+            MOBILE MENU BUTTON
+        ===================================== */}
 
         <button
           type="button"
@@ -282,14 +296,20 @@ function Navbar() {
             <Menu size={25} />
           )}
         </button>
+
       </div>
 
-      {/* MOBILE MENU */}
+
+      {/* =====================================
+          MOBILE MENU
+      ===================================== */}
 
       <div
         ref={mobileMenuRef}
         className="mobile-navigation"
       >
+
+        {/* HOME */}
 
         <NavLink
           to="/"
@@ -307,6 +327,9 @@ function Navbar() {
           Home
         </NavLink>
 
+
+        {/* GALLERY */}
+
         <NavLink
           to="/gallery"
           onClick={closeMenu}
@@ -322,6 +345,9 @@ function Navbar() {
           <span>02</span>
           Gallery
         </NavLink>
+
+
+        {/* ABOUT */}
 
         <NavLink
           to="/about"
@@ -339,6 +365,9 @@ function Navbar() {
           About
         </NavLink>
 
+
+        {/* CONTACT */}
+
         <NavLink
           to="/contact"
           onClick={closeMenu}
@@ -355,15 +384,20 @@ function Navbar() {
           Contact
         </NavLink>
 
+
+        {/* BOOKING */}
+
         <Link
-          to="/contact"
+          to="/book"
           className="mobile-booking-button"
           onClick={closeMenu}
           ref={(el) => {
             mobileLinksRef.current[4] = el;
           }}
         >
-          Book Your Stay
+          <span>
+            Book Your Stay
+          </span>
 
           <ArrowUpRight size={18} />
         </Link>
