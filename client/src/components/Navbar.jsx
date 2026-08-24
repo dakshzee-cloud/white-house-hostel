@@ -10,25 +10,25 @@ import {
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 
-import ".styles/Navbar.css";
+import "../styles/Navbar.css";
 
 gsap.registerPlugin(useGSAP);
 
 function Navbar() {
-  const [scrolled, setScrolled] = useState(false);
-  const [menuOpen, setMenuOpen] = useState(false);
-
   const navbarRef = useRef(null);
   const mobileMenuRef = useRef(null);
   const mobileLinksRef = useRef([]);
 
-  /* ==========================================
-     SCROLL DETECTION
-  ========================================== */
+  const [scrolled, setScrolled] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  // -----------------------------------------
+  // SCROLL
+  // -----------------------------------------
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 30);
+      setScrolled(window.scrollY > 40);
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -38,47 +38,47 @@ function Navbar() {
     };
   }, []);
 
-  /* ==========================================
-     NAVBAR GSAP ENTRANCE
-  ========================================== */
+  // -----------------------------------------
+  // NAVBAR ENTRANCE ANIMATION
+  // -----------------------------------------
 
   useGSAP(
     () => {
       const tl = gsap.timeline();
 
       tl.from(".navbar-brand", {
-        opacity: 0,
         x: -40,
+        opacity: 0,
         duration: 0.8,
         ease: "power3.out",
       })
         .from(
           ".nav-link",
           {
-            opacity: 0,
             y: -20,
+            opacity: 0,
             duration: 0.6,
             stagger: 0.08,
             ease: "power3.out",
           },
-          "-=0.5"
+          "-=0.45"
         )
         .from(
           ".booking-button",
           {
+            x: 35,
             opacity: 0,
-            x: 40,
             scale: 0.9,
             duration: 0.7,
             ease: "back.out(1.7)",
           },
-          "-=0.5"
+          "-=0.45"
         )
         .from(
           ".mobile-menu-button",
           {
-            opacity: 0,
             scale: 0.7,
+            opacity: 0,
             duration: 0.5,
             ease: "back.out(1.7)",
           },
@@ -90,9 +90,9 @@ function Navbar() {
     }
   );
 
-  /* ==========================================
-     MOBILE MENU GSAP
-  ========================================== */
+  // -----------------------------------------
+  // MOBILE MENU ANIMATION
+  // -----------------------------------------
 
   useEffect(() => {
     if (!mobileMenuRef.current) return;
@@ -113,7 +113,7 @@ function Navbar() {
         {
           opacity: 1,
           y: 0,
-          duration: 0.45,
+          duration: 0.4,
           ease: "power3.out",
         }
       ).from(
@@ -125,7 +125,7 @@ function Navbar() {
           stagger: 0.07,
           ease: "power3.out",
         },
-        "-=0.2"
+        "-=0.15"
       );
     } else {
       gsap.to(mobileMenuRef.current, {
@@ -142,9 +142,9 @@ function Navbar() {
     }
   }, [menuOpen]);
 
-  /* ==========================================
-     CLOSE MENU
-  ========================================== */
+  // -----------------------------------------
+  // CLOSE MENU
+  // -----------------------------------------
 
   const closeMenu = () => {
     setMenuOpen(false);
@@ -159,9 +159,7 @@ function Navbar() {
     >
       <div className="navbar-container">
 
-        {/* =====================================
-            LOGO
-        ===================================== */}
+        {/* LOGO */}
 
         <Link
           to="/"
@@ -206,11 +204,10 @@ function Navbar() {
           </div>
         </Link>
 
-        {/* =====================================
-            DESKTOP NAV
-        ===================================== */}
+        {/* DESKTOP NAV */}
 
         <nav className="desktop-navigation">
+
           <NavLink
             to="/"
             className={({ isActive }) =>
@@ -254,50 +251,46 @@ function Navbar() {
           >
             Contact
           </NavLink>
+
         </nav>
 
-        {/* =====================================
-            DESKTOP BOOKING
-        ===================================== */}
+        {/* BOOK BUTTON */}
 
         <Link
           to="/contact"
           className="booking-button"
         >
-          <CalendarDays
-            size={17}
-            strokeWidth={2}
-          />
+          <CalendarDays size={17} />
 
-          <span>Book Your Stay</span>
+          <span>
+            Book Your Stay
+          </span>
         </Link>
 
-        {/* =====================================
-            MOBILE MENU BUTTON
-        ===================================== */}
+        {/* MOBILE BUTTON */}
 
         <button
+          type="button"
           className="mobile-menu-button"
-          onClick={() => setMenuOpen(!menuOpen)}
+          onClick={() => setMenuOpen((prev) => !prev)}
           aria-label="Toggle navigation"
           aria-expanded={menuOpen}
         >
           {menuOpen ? (
-            <X size={25} strokeWidth={1.8} />
+            <X size={25} />
           ) : (
-            <Menu size={25} strokeWidth={1.8} />
+            <Menu size={25} />
           )}
         </button>
       </div>
 
-      {/* =======================================
-          MOBILE MENU
-      ======================================= */}
+      {/* MOBILE MENU */}
 
       <div
         ref={mobileMenuRef}
         className="mobile-navigation"
       >
+
         <NavLink
           to="/"
           onClick={closeMenu}
@@ -374,6 +367,7 @@ function Navbar() {
 
           <ArrowUpRight size={18} />
         </Link>
+
       </div>
     </header>
   );

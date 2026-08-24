@@ -1,5 +1,10 @@
+/* =========================================
+   NAVBAR
+========================================= */
+
 .site-navbar {
   position: fixed;
+
   top: 0;
   left: 0;
 
@@ -10,9 +15,9 @@
 
   background: rgba(250, 249, 246, 0.96);
 
-  color: #111b15;
+  color: #17231c;
 
-  border-bottom: 1px solid rgba(20, 35, 27, 0.05);
+  border-bottom: 1px solid rgba(23, 35, 28, 0.06);
 
   transition:
     background 0.45s ease,
@@ -21,29 +26,42 @@
     backdrop-filter 0.45s ease;
 }
 
+
+/* =========================================
+   SCROLLED NAVBAR
+========================================= */
+
 .site-navbar.navbar-scrolled {
-  background: rgba(239, 237, 230, 0.94);
+  height: 70px;
+
+  background: rgba(239, 237, 230, 0.92);
+
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
 
   box-shadow:
-    0 8px 30px rgba(20, 35, 27, 0.08);
-
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
-
-  height: 72px;
+    0 8px 30px rgba(23, 35, 28, 0.08);
 }
 
+
+/* =========================================
+   CONTAINER
+========================================= */
+
 .navbar-container {
-  width: min(100% - 48px, 1400px);
+  width: min(100% - 50px, 1400px);
 
   height: 100%;
 
   margin: 0 auto;
 
   display: flex;
+
   align-items: center;
+
   justify-content: space-between;
 }
+
 
 /* =========================================
    LOGO
@@ -51,7 +69,9 @@
 
 .navbar-brand {
   display: flex;
+
   align-items: center;
+
   gap: 11px;
 
   color: #17231c;
@@ -61,29 +81,38 @@
   flex-shrink: 0;
 }
 
+
 .brand-mark {
   width: 39px;
   height: 47px;
 
   display: flex;
+
   align-items: center;
   justify-content: center;
 }
+
 
 .brand-mark svg {
   width: 38px;
   height: 46px;
 }
 
+
 .brand-text {
   display: flex;
+
   flex-direction: column;
 
   line-height: 1;
 }
 
+
 .brand-text span {
-  font-family: Georgia, "Times New Roman", serif;
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
 
   font-size: 22px;
 
@@ -92,17 +121,22 @@
   letter-spacing: 3px;
 }
 
+
 .brand-text small {
   margin-top: 4px;
 
-  font-family: Arial, sans-serif;
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
 
-  font-size: 10px;
+  font-size: 9px;
 
   letter-spacing: 4px;
 
   font-weight: 500;
 }
+
 
 /* =========================================
    DESKTOP NAVIGATION
@@ -118,10 +152,12 @@
   height: 100%;
 
   display: flex;
+
   align-items: center;
 
   gap: 40px;
 }
+
 
 .nav-link {
   position: relative;
@@ -129,13 +165,17 @@
   height: 100%;
 
   display: flex;
+
   align-items: center;
 
-  color: #141714;
+  color: #151915;
 
   text-decoration: none;
 
-  font-family: Arial, Helvetica, sans-serif;
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
 
   font-size: 15px;
 
@@ -146,6 +186,7 @@
   transition: color 0.3s ease;
 }
 
+
 .nav-link::after {
   content: "";
 
@@ -154,30 +195,34 @@
   left: 0;
   right: 0;
 
-  bottom: 13px;
+  bottom: 12px;
 
   height: 2px;
 
-  background: #1c3828;
+  background: #173325;
 
   transform: scaleX(0);
 
   transform-origin: center;
 
-  transition: transform 0.3s ease;
+  transition:
+    transform 0.3s ease;
 }
 
+
 .nav-link:hover {
-  color: #1c3828;
+  color: #173325;
 }
+
 
 .nav-link:hover::after,
 .nav-link.active::after {
   transform: scaleX(1);
 }
 
+
 /* =========================================
-   BOOKING BUTTON
+   BOOK BUTTON
 ========================================= */
 
 .booking-button {
@@ -186,9 +231,12 @@
   padding: 0 18px;
 
   display: flex;
+
   align-items: center;
+
   justify-content: center;
-  gap: 10px;
+
+  gap: 9px;
 
   background: #173325;
 
@@ -198,7 +246,10 @@
 
   text-decoration: none;
 
-  font-family: Arial, Helvetica, sans-serif;
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
 
   font-size: 14px;
 
@@ -212,17 +263,19 @@
     box-shadow 0.3s ease;
 }
 
+
 .booking-button:hover {
   background: #214634;
 
   transform: translateY(-2px);
 
   box-shadow:
-    0 8px 20px rgba(23, 51, 37, 0.18);
+    0 10px 25px rgba(23, 51, 37, 0.18);
 }
 
+
 /* =========================================
-   MOBILE BUTTON
+   MOBILE MENU BUTTON
 ========================================= */
 
 .mobile-menu-button {
@@ -245,19 +298,119 @@
   cursor: pointer;
 }
 
+
 /* =========================================
-   MOBILE NAVIGATION
+   MOBILE MENU
 ========================================= */
 
 .mobile-navigation {
+  position: absolute;
+
+  top: 70px;
+  left: 0;
+
+  width: 100%;
+
+  padding: 25px 20px 30px;
+
   display: none;
+
+  flex-direction: column;
+
+  background: #f7f5ef;
+
+  border-top:
+    1px solid rgba(23, 51, 37, 0.08);
+
+  box-shadow:
+    0 15px 35px rgba(20, 35, 27, 0.08);
+
+  transform-origin: top center;
 }
+
+
+/* =========================================
+   MOBILE LINKS
+========================================= */
+
+.mobile-nav-link {
+  min-height: 62px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 20px;
+
+  border-bottom:
+    1px solid rgba(23, 51, 37, 0.1);
+
+  color: #17231c;
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  font-size: 20px;
+
+  text-decoration: none;
+}
+
+
+.mobile-nav-link span {
+  width: 25px;
+
+  color: #899188;
+
+  font-size: 11px;
+
+  letter-spacing: 1px;
+}
+
+
+.mobile-nav-link.active {
+  color: #173325;
+
+  font-weight: 600;
+}
+
+
+/* =========================================
+   MOBILE BOOK BUTTON
+========================================= */
+
+.mobile-booking-button {
+  margin-top: 22px;
+
+  min-height: 52px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  padding: 0 18px;
+
+  background: #173325;
+
+  color: #ffffff;
+
+  border-radius: 7px;
+
+  text-decoration: none;
+
+  font-size: 15px;
+}
+
 
 /* =========================================
    TABLET
 ========================================= */
 
 @media (max-width: 1000px) {
+
   .navbar-container {
     width: min(100% - 36px, 1400px);
   }
@@ -277,13 +430,16 @@
   .brand-text span {
     font-size: 20px;
   }
+
 }
+
 
 /* =========================================
    MOBILE
 ========================================= */
 
 @media (max-width: 768px) {
+
   .site-navbar {
     height: 70px;
   }
@@ -327,112 +483,19 @@
     letter-spacing: 3.2px;
   }
 
-  /* MOBILE MENU */
-
   .mobile-navigation {
-    position: absolute;
-
     top: 70px;
-    left: 0;
-
-    width: 100%;
-
-    padding: 25px 20px 30px;
-
-    display: flex;
-
-    flex-direction: column;
-
-    background: #f7f5ef;
-
-    border-top: 1px solid rgba(23, 51, 37, 0.08);
-
-    box-shadow:
-      0 15px 35px rgba(20, 35, 27, 0.08);
-
-    opacity: 0;
-
-    visibility: hidden;
-
-    transform: translateY(-15px);
-
-    transition:
-      opacity 0.35s ease,
-      transform 0.35s ease,
-      visibility 0.35s ease;
   }
 
-  .mobile-navigation.open {
-    opacity: 1;
-
-    visibility: visible;
-
-    transform: translateY(0);
-  }
-
-  .mobile-nav-link {
-    min-height: 62px;
-
-    display: flex;
-    align-items: center;
-
-    gap: 20px;
-
-    border-bottom: 1px solid rgba(23, 51, 37, 0.1);
-
-    color: #17231c;
-
-    font-family: Arial, Helvetica, sans-serif;
-
-    font-size: 20px;
-
-    text-decoration: none;
-  }
-
-  .mobile-nav-link span {
-    width: 25px;
-
-    color: #899188;
-
-    font-size: 11px;
-
-    letter-spacing: 1px;
-  }
-
-  .mobile-nav-link.active {
-    color: #173325;
-
-    font-weight: 600;
-  }
-
-  .mobile-booking-button {
-    margin-top: 22px;
-
-    min-height: 52px;
-
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-    padding: 0 18px;
-
-    background: #173325;
-
-    color: white;
-
-    border-radius: 7px;
-
-    text-decoration: none;
-
-    font-size: 15px;
-  }
 }
+
 
 /* =========================================
    SMALL MOBILE
 ========================================= */
 
 @media (max-width: 420px) {
+
   .navbar-container {
     width: calc(100% - 22px);
   }
@@ -458,7 +521,4 @@
     height: 40px;
   }
 
-  .mobile-navigation {
-    top: 70px;
-  }
 }
