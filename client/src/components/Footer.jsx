@@ -6,7 +6,7 @@ import {
   ArrowUpRight,
   Globe,
 } from "lucide-react";
-
+import "../styles/Footer.css";
 function Footer() {
   return (
     <footer className="footer">

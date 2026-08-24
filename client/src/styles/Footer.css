@@ -1,0 +1,169 @@
+.footer {
+  background: #0d2116;
+
+  color: #e9eee9;
+
+  padding: 100px 7vw 30px;
+}
+
+.footer-top {
+  display: grid;
+
+  grid-template-columns: 2fr 1fr 1.3fr;
+
+  gap: 80px;
+
+  padding-bottom: 90px;
+
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.footer-label {
+  display: block;
+
+  margin-bottom: 25px;
+
+  color: #809287;
+
+  font-size: 9px;
+
+  letter-spacing: 2.5px;
+}
+
+.footer-brand h2 {
+  margin: 0;
+
+  font-family: Georgia, "Times New Roman", serif;
+
+  font-size: clamp(55px, 7vw, 100px);
+
+  font-weight: 400;
+
+  line-height: 0.8;
+
+  letter-spacing: -4px;
+}
+
+.footer-brand p {
+  max-width: 380px;
+
+  margin-top: 35px;
+
+  color: #94a398;
+
+  font-size: 14px;
+
+  line-height: 1.7;
+}
+
+.footer-links,
+.footer-contact {
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: flex-start;
+}
+
+.footer-links a,
+.footer-contact a,
+.footer-location {
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  margin-bottom: 17px;
+
+  color: #c5cec8;
+
+  font-size: 13px;
+
+  text-decoration: none;
+
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover,
+.footer-contact a:hover {
+  color: white;
+}
+
+.footer-bottom {
+  display: grid;
+
+  grid-template-columns: 1fr auto 1fr;
+
+  align-items: center;
+
+  padding-top: 25px;
+
+  color: #708177;
+
+  font-size: 10px;
+
+  letter-spacing: 1px;
+}
+
+.footer-socials {
+  display: flex;
+
+  gap: 12px;
+}
+
+.footer-socials a {
+  width: 36px;
+  height: 36px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid rgba(255,255,255,0.12);
+
+  border-radius: 50%;
+
+  color: #b5c0b9;
+}
+
+.footer-bottom > a {
+  justify-self: end;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  color: #dce5de;
+
+  text-decoration: none;
+}
+
+@media (max-width: 768px) {
+  .footer {
+    padding: 80px 22px 25px;
+  }
+
+  .footer-top {
+    grid-template-columns: 1fr;
+
+    gap: 55px;
+
+    padding-bottom: 60px;
+  }
+
+  .footer-bottom {
+    grid-template-columns: 1fr;
+
+    gap: 20px;
+
+    align-items: flex-start;
+  }
+
+  .footer-bottom > a {
+    justify-self: start;
+  }
+}
