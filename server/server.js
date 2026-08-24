@@ -1,8 +1,8 @@
 import express from "express";
-import mongoose from "mongoose";
 import cors from "cors";
 import dotenv from "dotenv";
 
+import connectDB from "./config/db.js";
 import bookingRoutes from "./routes/bookingRoutes.js";
 
 dotenv.config();
@@ -12,9 +12,9 @@ const app = express();
 const PORT = process.env.PORT || 5000;
 
 
-/* =========================================
-   MIDDLEWARE
-========================================= */
+// =========================================
+// MIDDLEWARE
+// =========================================
 
 app.use(
   cors({
@@ -25,9 +25,9 @@ app.use(
 app.use(express.json());
 
 
-/* =========================================
-   ROUTES
-========================================= */
+// =========================================
+// ROUTES
+// =========================================
 
 app.get("/", (req, res) => {
   res.json({
@@ -41,24 +41,30 @@ app.use(
 );
 
 
-/* =========================================
-   DATABASE + SERVER
-========================================= */
+// =========================================
+// START SERVER
+// =========================================
 
-mongoose
-  .connect(process.env.MONGO_URI)
-  .then(() => {
-    console.log("MongoDB connected");
+const startServer = async () => {
+  try {
+
+    await connectDB();
 
     app.listen(PORT, () => {
       console.log(
         `Server running on http://localhost:${PORT}`
       );
     });
-  })
-  .catch((error) => {
+
+  } catch (error) {
+
     console.error(
-      "MongoDB connection failed:",
+      "Server startup failed:",
       error.message
     );
-  });
+
+    process.exit(1);
+  }
+};
+
+startServer();
