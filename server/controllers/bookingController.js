@@ -50,13 +50,27 @@ export const createBooking = async (req, res) => {
       message: "Booking request submitted successfully.",
       booking,
     });
-
   } catch (error) {
     console.error("Booking Error:", error);
 
     res.status(500).json({
       success: false,
       message: "Server error. Please try again later.",
+    });
+  }
+};
+
+export const getBookings = async (req, res) => {
+  try {
+    const bookings = await Booking.find().sort({ createdAt: -1 });
+
+    res.status(200).json(bookings);
+  } catch (error) {
+    console.error("Get Bookings Error:", error);
+
+    res.status(500).json({
+      success: false,
+      message: "Unable to fetch bookings.",
     });
   }
 };
