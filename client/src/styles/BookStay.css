@@ -1,0 +1,1469 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Libre+Baskerville:wght@400;700&display=swap");
+
+/* =========================================================
+   GLOBAL
+========================================================= */
+
+.book-stay-page {
+  --green: #123923;
+  --green-dark: #0b291a;
+  --green-light: #1d5538;
+
+  --cream: #f7f4ec;
+  --cream-two: #f0ece2;
+
+  --text: #172019;
+  --muted: #697169;
+  --border: #d7d2c7;
+
+  position: relative;
+
+  width: 100%;
+  max-width: 100%;
+
+  min-height: 100vh;
+
+  margin: 0;
+  padding: 0;
+
+  overflow-x: hidden;
+
+  background: var(--cream);
+
+  color: var(--text);
+
+  font-family:
+    "DM Sans",
+    Arial,
+    sans-serif;
+}
+
+.book-stay-page *,
+.book-stay-page *::before,
+.book-stay-page *::after {
+  box-sizing: border-box;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.booking-header {
+  position: relative;
+
+  width: 100%;
+
+  min-height: 430px;
+
+  padding:
+    120px 7vw 70px;
+
+  display: flex;
+
+  align-items: center;
+
+  overflow: hidden;
+
+  background-image:
+    linear-gradient(90deg,
+      rgba(3, 17, 10, 0.86) 0%,
+      rgba(3, 17, 10, 0.64) 32%,
+      rgba(3, 17, 10, 0.26) 65%,
+      rgba(3, 17, 10, 0.12) 100%),
+    url("https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=2200&q=90");
+
+  background-size: cover;
+
+  background-position:
+    center 54%;
+
+  color: #ffffff;
+
+  isolation: isolate;
+}
+
+
+/* dark bottom fade */
+
+.booking-header::after {
+  content: "";
+
+  position: absolute;
+
+  inset: auto 0 0;
+
+  height: 120px;
+
+  z-index: -1;
+
+  background:
+    linear-gradient(to top,
+      rgba(5, 17, 10, 0.3),
+      transparent);
+
+  pointer-events: none;
+}
+
+
+.booking-header-inner {
+  position: relative;
+
+  z-index: 2;
+
+  width: min(1180px,
+      100%);
+
+  margin: 0 auto;
+}
+
+
+/* =========================================================
+   HERO LABEL
+========================================================= */
+
+.booking-header .booking-label {
+  margin:
+    0 0 17px;
+
+  color:
+    rgba(255, 255, 255, 0.92);
+
+  font-size: 10px;
+
+  line-height: 1;
+
+  font-weight: 700;
+
+  letter-spacing: 2px;
+
+  text-transform: uppercase;
+}
+
+
+/* =========================================================
+   HERO TITLE
+========================================================= */
+
+.booking-header h1 {
+  max-width: 700px;
+
+  margin: 0;
+
+  color: #ffffff;
+
+  font-family:
+    "Libre Baskerville",
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size:
+    clamp(52px,
+      5.4vw,
+      78px);
+
+  line-height: 1.02;
+
+  font-weight: 400;
+
+  letter-spacing: -3px;
+}
+
+
+.booking-header h1 span {
+  color: #ffffff;
+}
+
+
+/* =========================================================
+   HERO DESCRIPTION
+========================================================= */
+
+.booking-intro {
+  max-width: 430px;
+
+  margin:
+    24px 0 0;
+
+  color:
+    rgba(255, 255, 255, 0.88);
+
+  font-size: 12px;
+
+  line-height: 1.75;
+}
+
+
+/* =========================================================
+   BOOKING SECTION
+========================================================= */
+
+.booking-section {
+  position: relative;
+
+  width: 100%;
+
+  padding:
+    65px 7vw 85px;
+
+  background:
+    #f8f5ed;
+}
+
+
+.booking-layout {
+  width: min(1180px,
+      100%);
+
+  margin: 0 auto;
+
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 0.72fr) minmax(0, 1.28fr);
+
+  gap: 55px;
+
+  align-items: start;
+}
+
+
+/* important for preventing overflow */
+
+.booking-layout>* {
+  min-width: 0;
+}
+
+
+/* =========================================================
+   LEFT INFO
+========================================================= */
+
+.booking-info {
+  position: sticky;
+
+  top: 105px;
+
+  padding:
+    18px 15px 20px 0;
+}
+
+
+.booking-info .booking-label {
+  margin:
+    0 0 14px;
+
+  color: #526259;
+
+  font-size: 8px;
+
+  font-weight: 700;
+
+  letter-spacing: 1.8px;
+
+  text-transform: uppercase;
+}
+
+
+.booking-info h2 {
+  margin:
+    0 0 22px;
+
+  color: #172019;
+
+  font-family:
+    "Libre Baskerville",
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size:
+    clamp(37px,
+      3.5vw,
+      53px);
+
+  line-height: 1.05;
+
+  font-weight: 400;
+
+  letter-spacing: -2px;
+}
+
+
+.booking-info>p:not(.booking-label) {
+  max-width: 390px;
+
+  margin: 0;
+
+  color: #626c65;
+
+  font-size: 10px;
+
+  line-height: 1.8;
+}
+
+
+/* =========================================================
+   DETAILS
+========================================================= */
+
+.booking-details {
+  margin-top: 35px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 0;
+
+  border-top:
+    1px solid var(--border);
+}
+
+
+.booking-details>div {
+  min-height: 72px;
+
+  padding:
+    16px 0;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 14px;
+
+  border-bottom:
+    1px solid var(--border);
+
+  color: var(--green);
+
+  transition:
+    padding-left 0.35s ease,
+    background 0.35s ease;
+}
+
+
+.booking-details>div:hover {
+  padding-left: 7px;
+}
+
+
+.booking-details>div>svg {
+  width: 22px;
+
+  height: 22px;
+
+  flex-shrink: 0;
+
+  stroke-width: 1.7;
+}
+
+
+.booking-details span {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 4px;
+
+  color: #24372c;
+
+  font-family:
+    "Libre Baskerville",
+    Georgia,
+    serif;
+
+  font-size: 11px;
+
+  font-weight: 700;
+}
+
+
+.booking-details small {
+  color: #7d857f;
+
+  font-family:
+    "DM Sans",
+    Arial,
+    sans-serif;
+
+  font-size: 8px;
+
+  font-weight: 400;
+}
+
+
+/* =========================================================
+   FORM CARD
+========================================================= */
+
+.booking-card {
+  position: relative;
+
+  width: 100%;
+
+  padding:
+    35px 38px 38px;
+
+  overflow: hidden;
+
+  background: #fffefa;
+
+  border:
+    1px solid #ddd8ce;
+
+  border-radius: 5px;
+
+  box-shadow:
+    0 20px 55px rgba(23, 59, 40, 0.07);
+}
+
+
+/* subtle decorative line */
+
+.booking-card::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: 0;
+
+  width: 100%;
+
+  height: 3px;
+
+  background:
+    var(--green);
+}
+
+
+/* =========================================================
+   FORM
+========================================================= */
+
+.booking-form {
+  width: 100%;
+}
+
+
+/* =========================================================
+   SECTION HEADING
+========================================================= */
+
+.form-heading {
+  width: 100%;
+
+  margin:
+    0 0 25px;
+
+  padding-bottom:
+    17px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 14px;
+
+  border-bottom:
+    1px solid #dedad0;
+}
+
+
+.form-heading>span {
+  width: 30px;
+
+  height: 30px;
+
+  display: grid;
+
+  place-items: center;
+
+  flex-shrink: 0;
+
+  border-radius: 50%;
+
+  background:
+    var(--green);
+
+  color: #ffffff;
+
+  font-size: 8px;
+
+  font-weight: 700;
+
+  letter-spacing: 0;
+}
+
+
+.form-heading h2 {
+  margin: 0;
+
+  color: #172019;
+
+  font-family:
+    "Libre Baskerville",
+    Georgia,
+    serif;
+
+  font-size: 23px;
+
+  line-height: 1.2;
+
+  font-weight: 400;
+
+  letter-spacing: -0.5px;
+}
+
+
+.form-heading-space {
+  margin-top: 38px;
+}
+
+
+/* =========================================================
+   ROW
+========================================================= */
+
+.form-row {
+  width: 100%;
+
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1fr) minmax(0, 1fr);
+
+  gap: 15px;
+}
+
+
+/* =========================================================
+   GROUP
+========================================================= */
+
+.form-group {
+  width: 100%;
+
+  min-width: 0;
+
+  margin-bottom: 17px;
+}
+
+
+.form-group label {
+  min-height: 18px;
+
+  margin-bottom: 7px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content:
+    space-between;
+
+  gap: 10px;
+
+  color: #435249;
+
+  font-size: 9px;
+
+  line-height: 1.2;
+
+  font-weight: 600;
+}
+
+
+.form-group label span {
+  color: #9ca39e;
+
+  font-size: 8px;
+
+  font-weight: 400;
+}
+
+
+/* =========================================================
+   INPUT WRAPPER
+========================================================= */
+
+.input-wrapper {
+  position: relative;
+
+  width: 100%;
+
+  display: flex;
+
+  align-items: center;
+}
+
+
+.input-wrapper>svg {
+  position: absolute;
+
+  z-index: 2;
+
+  left: 15px;
+
+  width: 16px;
+
+  height: 16px;
+
+  color: #68796e;
+
+  pointer-events: none;
+
+  stroke-width: 1.7;
+}
+
+
+/* =========================================================
+   INPUT / SELECT / TEXTAREA
+========================================================= */
+
+.input-wrapper input,
+.input-wrapper select,
+.form-group textarea {
+  width: 100%;
+
+  min-width: 0;
+
+  border:
+    1px solid #d6d2c8;
+
+  border-radius: 2px;
+
+  outline: none;
+
+  background:
+    #faf8f2;
+
+  color: #203128;
+
+  font-family:
+    "DM Sans",
+    Arial,
+    sans-serif;
+
+  font-size: 10px;
+
+  transition:
+    border-color 0.3s ease,
+    background 0.3s ease,
+    box-shadow 0.3s ease,
+    transform 0.3s ease;
+}
+
+
+.input-wrapper input,
+.input-wrapper select {
+  height: 50px;
+
+  padding:
+    0 14px 0 43px;
+}
+
+
+.form-group textarea {
+  min-height: 115px;
+
+  padding: 15px;
+
+  resize: vertical;
+}
+
+
+.input-wrapper input::placeholder,
+.form-group textarea::placeholder {
+  color: #969e98;
+}
+
+
+/* hover */
+
+.input-wrapper input:hover,
+.input-wrapper select:hover,
+.form-group textarea:hover {
+  border-color:
+    #aab2ac;
+}
+
+
+/* focus */
+
+.input-wrapper input:focus,
+.input-wrapper select:focus,
+.form-group textarea:focus {
+  border-color:
+    var(--green);
+
+  background: #ffffff;
+
+  box-shadow:
+    0 0 0 3px rgba(18, 57, 35, 0.065);
+}
+
+
+/* =========================================================
+   SELECT
+========================================================= */
+
+.input-wrapper select {
+  appearance: none;
+
+  -webkit-appearance: none;
+
+  cursor: pointer;
+
+  padding-right: 35px;
+
+  background-image:
+    linear-gradient(45deg,
+      transparent 50%,
+      #53645a 50%),
+    linear-gradient(135deg,
+      #53645a 50%,
+      transparent 50%);
+
+  background-position:
+    calc(100% - 17px) 22px,
+    calc(100% - 12px) 22px;
+
+  background-size:
+    5px 5px,
+    5px 5px;
+
+  background-repeat:
+    no-repeat;
+}
+
+
+/* =========================================================
+   DATE INPUT
+========================================================= */
+
+.input-wrapper input[type="date"] {
+  color: #536158;
+}
+
+
+/* =========================================================
+   ERROR
+========================================================= */
+
+.booking-error {
+  width: 100%;
+
+  margin:
+    3px 0 16px;
+
+  padding:
+    13px 15px;
+
+  border:
+    1px solid #dfb7b7;
+
+  background:
+    #fff3f2;
+
+  color:
+    #99403e;
+
+  font-size: 9px;
+
+  line-height: 1.6;
+}
+
+
+/* =========================================================
+   SUBMIT
+========================================================= */
+
+.submit-booking {
+  position: relative;
+
+  width: 100%;
+
+  min-height: 52px;
+
+  margin-top: 5px;
+
+  padding:
+    0 22px;
+
+  border: 0;
+
+  border-radius: 2px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 11px;
+
+  overflow: hidden;
+
+  background:
+    var(--green);
+
+  color:
+    #ffffff;
+
+  font-family:
+    "DM Sans",
+    Arial,
+    sans-serif;
+
+  font-size: 10px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.35s cubic-bezier(0.16,
+      1,
+      0.3,
+      1),
+    background 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+
+.submit-booking svg {
+  width: 16px;
+
+  height: 16px;
+
+  transition:
+    transform 0.35s ease;
+}
+
+
+.submit-booking:hover:not(:disabled) {
+  transform:
+    translateY(-3px);
+
+  background:
+    #1d5538;
+
+  box-shadow:
+    0 15px 32px rgba(18,
+      57,
+      35,
+      0.2);
+}
+
+
+.submit-booking:hover:not(:disabled) svg {
+  transform:
+    translateX(5px);
+}
+
+
+.submit-booking:active:not(:disabled) {
+  transform:
+    translateY(-1px);
+}
+
+
+.submit-booking:disabled {
+  cursor:
+    not-allowed;
+
+  opacity:
+    0.55;
+}
+
+
+/* =========================================================
+   NOTE
+========================================================= */
+
+.booking-note {
+  max-width: 500px;
+
+  margin:
+    16px auto 0;
+
+  color: #8a928c;
+
+  font-size: 8px;
+
+  line-height: 1.6;
+
+  text-align: center;
+}
+
+
+/* =========================================================
+   SUCCESS STATE
+========================================================= */
+
+.booking-success {
+  width: 100%;
+
+  min-height: 555px;
+
+  padding: 40px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+
+  text-align: center;
+}
+
+
+.success-icon {
+  width: 74px;
+
+  height: 74px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background:
+    #e4ede7;
+
+  color:
+    var(--green);
+
+  box-shadow:
+    0 0 0 10px rgba(18,
+      57,
+      35,
+      0.04);
+}
+
+
+.booking-success h2 {
+  margin:
+    27px 0 14px;
+
+  color: #172019;
+
+  font-family:
+    "Libre Baskerville",
+    Georgia,
+    serif;
+
+  font-size:
+    clamp(34px,
+      4vw,
+      48px);
+
+  line-height: 1.05;
+
+  font-weight: 400;
+
+  letter-spacing: -1.6px;
+}
+
+
+.booking-success p {
+  max-width: 400px;
+
+  margin: 0;
+
+  color: #69736c;
+
+  font-size: 10px;
+
+  line-height: 1.75;
+}
+
+
+/* =========================================================
+   BOOK AGAIN
+========================================================= */
+
+.booking-again {
+  min-height: 44px;
+
+  margin-top: 25px;
+
+  padding:
+    0 20px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 10px;
+
+  border:
+    1px solid #b8c0ba;
+
+  border-radius: 2px;
+
+  background:
+    transparent;
+
+  color:
+    var(--green);
+
+  font-family:
+    "DM Sans",
+    sans-serif;
+
+  font-size: 9px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition:
+    color 0.35s ease,
+    background 0.35s ease,
+    transform 0.35s ease;
+}
+
+
+.booking-again:hover {
+  background:
+    var(--green);
+
+  color: #ffffff;
+
+  transform:
+    translateY(-2px);
+}
+
+
+/* =========================================================
+   GSAP POLISH
+========================================================= */
+
+.booking-header,
+.booking-card,
+.booking-info {
+  backface-visibility:
+    hidden;
+}
+
+
+.booking-card {
+  will-change:
+    transform,
+    opacity;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1000px) {
+
+  .booking-header {
+    min-height:
+      410px;
+
+    padding:
+      115px 5vw 65px;
+  }
+
+
+  .booking-section {
+    padding:
+      60px 5vw 80px;
+  }
+
+
+  .booking-layout {
+    gap: 35px;
+
+    grid-template-columns:
+      minmax(0, 0.8fr) minmax(0, 1.2fr);
+  }
+
+
+  .booking-card {
+    padding:
+      30px 28px;
+  }
+
+
+  .booking-info h2 {
+    font-size:
+      40px;
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 768px) {
+
+  .book-stay-page {
+    overflow-x:
+      hidden;
+  }
+
+
+  /* HERO */
+
+  .booking-header {
+    min-height:
+      470px;
+
+    padding:
+      120px 20px 48px;
+
+    align-items:
+      flex-end;
+
+    background-position:
+      60% center;
+
+    background-image:
+      linear-gradient(to top,
+        rgba(3, 17, 10, 0.88) 0%,
+        rgba(3, 17, 10, 0.52) 55%,
+        rgba(3, 17, 10, 0.24) 100%),
+      url("https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=1600&q=90");
+  }
+
+
+  .booking-header h1 {
+    font-size:
+      clamp(44px,
+        12vw,
+        58px);
+
+    line-height:
+      1.04;
+
+    letter-spacing:
+      -2px;
+  }
+
+
+  .booking-intro {
+    max-width:
+      360px;
+
+    margin-top:
+      18px;
+
+    font-size:
+      10px;
+
+    line-height:
+      1.7;
+  }
+
+
+  /* SECTION */
+
+  .booking-section {
+    padding:
+      45px 18px 60px;
+  }
+
+
+  .booking-layout {
+    display:
+      flex;
+
+    flex-direction:
+      column;
+
+    gap:
+      35px;
+  }
+
+
+  .booking-info {
+    position:
+      relative;
+
+    top:
+      auto;
+
+    width:
+      100%;
+
+    padding:
+      0;
+  }
+
+
+  .booking-info h2 {
+    max-width:
+      450px;
+
+    font-size:
+      37px;
+
+    line-height:
+      1.08;
+  }
+
+
+  .booking-info>p:not(.booking-label) {
+    font-size:
+      9px;
+  }
+
+
+  .booking-details {
+    margin-top:
+      25px;
+  }
+
+
+  .booking-details>div {
+    min-height:
+      67px;
+  }
+
+
+  /* CARD */
+
+  .booking-card {
+    width: 100%;
+
+    padding:
+      28px 22px 30px;
+  }
+
+
+  .form-heading {
+    margin-bottom:
+      23px;
+  }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 560px) {
+
+  .booking-header {
+    min-height:
+      440px;
+
+    padding:
+      110px 16px 38px;
+  }
+
+
+  .booking-header .booking-label {
+    font-size:
+      8px;
+  }
+
+
+  .booking-header h1 {
+    font-size:
+      42px;
+
+    letter-spacing:
+      -1.5px;
+  }
+
+
+  .booking-intro {
+    font-size:
+      9px;
+  }
+
+
+  .booking-section {
+    padding:
+      40px 14px 55px;
+  }
+
+
+  .booking-info h2 {
+    font-size:
+      32px;
+
+    letter-spacing:
+      -1.3px;
+  }
+
+
+  /* one field per line */
+
+  .form-row {
+    grid-template-columns:
+      1fr;
+
+    gap:
+      0;
+  }
+
+
+  .booking-card {
+    padding:
+      25px 17px 27px;
+  }
+
+
+  .form-heading>span {
+    width:
+      28px;
+
+    height:
+      28px;
+
+    font-size:
+      7px;
+  }
+
+
+  .form-heading h2 {
+    font-size:
+      21px;
+  }
+
+
+  .form-heading-space {
+    margin-top:
+      30px;
+  }
+
+
+  .form-group {
+    margin-bottom:
+      14px;
+  }
+
+
+  .form-group label {
+    font-size:
+      9px;
+  }
+
+
+  .input-wrapper input,
+  .input-wrapper select {
+    height:
+      49px;
+
+    font-size:
+      10px;
+  }
+
+
+  .form-group textarea {
+    min-height:
+      120px;
+
+    font-size:
+      10px;
+  }
+
+
+  .submit-booking {
+    min-height:
+      51px;
+  }
+
+
+  .booking-success {
+    min-height:
+      480px;
+
+    padding:
+      30px 10px;
+  }
+
+
+  .booking-success h2 {
+    font-size:
+      33px;
+  }
+
+}
+
+
+/* =========================================================
+   VERY SMALL MOBILE
+========================================================= */
+
+@media (max-width: 360px) {
+
+  .booking-header {
+    padding-left:
+      13px;
+
+    padding-right:
+      13px;
+  }
+
+
+  .booking-section {
+    padding-left:
+      11px;
+
+    padding-right:
+      11px;
+  }
+
+
+  .booking-card {
+    padding:
+      22px 14px 25px;
+  }
+
+
+  .booking-header h1 {
+    font-size:
+      38px;
+  }
+
+
+  .booking-info h2 {
+    font-size:
+      29px;
+  }
+
+}
+
+
+/* =========================================================
+   ACCESSIBILITY
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .book-stay-page *,
+  .book-stay-page *::before,
+  .book-stay-page *::after {
+    animation-duration:
+      0.01ms !important;
+
+    animation-iteration-count:
+      1 !important;
+
+    transition-duration:
+      0.01ms !important;
+  }
+
+}

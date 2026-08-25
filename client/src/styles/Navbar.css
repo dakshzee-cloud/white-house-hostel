@@ -1,0 +1,853 @@
+/* =====================================================
+   NAVBAR
+===================================================== */
+
+.site-navbar {
+  position: fixed;
+
+  top: 0;
+  left: 0;
+
+  width: 100%;
+
+  z-index: 9999;
+
+  background: transparent;
+
+  color: #ffffff;
+
+  border-bottom: 1px solid transparent;
+
+  will-change:
+    background,
+    transform,
+    box-shadow;
+
+  transition:
+    color 0.4s ease,
+    border-color 0.4s ease,
+    backdrop-filter 0.4s ease;
+}
+
+
+/* =====================================================
+   DARK GRADIENT WHEN TRANSPARENT
+===================================================== */
+
+.site-navbar::before {
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  z-index: -1;
+
+  pointer-events: none;
+
+  background:
+    linear-gradient(to bottom,
+      rgba(4, 18, 11, 0.42),
+      rgba(4, 18, 11, 0.18) 55%,
+      transparent);
+
+  opacity: 1;
+
+  transition:
+    opacity 0.4s ease;
+}
+
+
+/* =====================================================
+   SCROLLED
+===================================================== */
+
+.site-navbar.navbar-scrolled {
+  color: #173325;
+
+  border-bottom:
+    1px solid rgba(23, 51, 37, 0.08);
+
+  backdrop-filter:
+    blur(18px);
+
+  -webkit-backdrop-filter:
+    blur(18px);
+}
+
+
+.site-navbar.navbar-scrolled::before {
+  opacity: 0;
+}
+
+
+/* =====================================================
+   CONTAINER
+===================================================== */
+
+.navbar-container {
+  width:
+    min(100% - 60px, 1400px);
+
+  height: 78px;
+
+  margin: 0 auto;
+
+  position: relative;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+}
+
+
+/* =====================================================
+   BRAND
+===================================================== */
+
+.navbar-brand {
+  position: relative;
+
+  z-index: 4;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  color: inherit;
+
+  text-decoration: none;
+
+  flex-shrink: 0;
+
+  transform-origin:
+    left center;
+}
+
+
+.brand-mark {
+  width: 36px;
+
+  height: 43px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  color: inherit;
+}
+
+
+.brand-mark svg {
+  width: 35px;
+
+  height: 42px;
+}
+
+
+.brand-text {
+  display: flex;
+
+  flex-direction: column;
+
+  color: inherit;
+
+  line-height: 1;
+}
+
+
+.brand-text span {
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: 20px;
+
+  font-weight: 700;
+
+  letter-spacing: 3px;
+}
+
+
+.brand-text small {
+  margin-top: 4px;
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  font-size: 7px;
+
+  font-weight: 600;
+
+  letter-spacing: 4px;
+}
+
+
+/* =====================================================
+   DESKTOP NAVIGATION
+===================================================== */
+
+.desktop-navigation {
+  position: absolute;
+
+  top: 0;
+
+  left: 50%;
+
+  height: 100%;
+
+  transform:
+    translateX(-50%);
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 38px;
+}
+
+
+.nav-link {
+  position: relative;
+
+  height: 100%;
+
+  padding: 0 2px;
+
+  display: flex;
+
+  align-items: center;
+
+  color: #ffffff;
+
+  text-decoration: none;
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  font-size: 13px;
+
+  font-weight: 600;
+
+  letter-spacing: 0.2px;
+
+  white-space: nowrap;
+
+  text-shadow:
+    0 2px 14px rgba(0, 0, 0, 0.35);
+
+  transition:
+    color 0.35s ease,
+    opacity 0.35s ease;
+}
+
+
+/* DARK AFTER SCROLL */
+
+.navbar-scrolled .nav-link {
+  color: #173325;
+
+  text-shadow: none;
+}
+
+
+/* =====================================================
+   UNDERLINE
+===================================================== */
+
+.nav-link::after {
+  content: "";
+
+  position: absolute;
+
+  left: 50%;
+
+  bottom: 14px;
+
+  width: 22px;
+
+  height: 2px;
+
+  border-radius: 10px;
+
+  background:
+    currentColor;
+
+  transform:
+    translateX(-50%) scaleX(0);
+
+  transform-origin: center;
+
+  transition:
+    transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+
+.nav-link:hover::after,
+.nav-link.active::after {
+  transform:
+    translateX(-50%) scaleX(1);
+}
+
+
+.nav-link:hover {
+  opacity: 0.72;
+}
+
+
+.nav-link.active {
+  font-weight: 700;
+}
+
+
+/* =====================================================
+   DESKTOP BOOK BUTTON
+===================================================== */
+
+.booking-button {
+  position: relative;
+
+  z-index: 4;
+
+  min-height: 42px;
+
+  padding: 0 18px;
+
+  overflow: hidden;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 8px;
+
+  background: #174a32;
+
+  border:
+    1px solid rgba(255, 255, 255, 0.18);
+
+  border-radius: 4px;
+
+  color: #ffffff;
+
+  text-decoration: none;
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  font-size: 11px;
+
+  font-weight: 600;
+
+  box-shadow:
+    0 7px 25px rgba(0, 0, 0, 0.15);
+
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+
+.booking-button::before {
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  background: #206443;
+
+  transform:
+    translateY(101%);
+
+  transition:
+    transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+
+.booking-button:hover::before {
+  transform:
+    translateY(0);
+}
+
+
+.booking-button>* {
+  position: relative;
+
+  z-index: 2;
+}
+
+
+.booking-button:hover {
+  transform:
+    translateY(-3px);
+
+  box-shadow:
+    0 13px 32px rgba(9, 48, 29, 0.24);
+}
+
+
+/* =====================================================
+   MOBILE BUTTON
+===================================================== */
+
+.mobile-menu-button {
+  position: relative;
+
+  z-index: 10002;
+
+  width: 42px;
+
+  height: 42px;
+
+  padding: 0;
+
+  display: none;
+
+  align-items: center;
+
+  justify-content: center;
+
+  border:
+    1px solid rgba(255, 255, 255, 0.55);
+
+  border-radius: 50%;
+
+  background:
+    rgba(0, 0, 0, 0.12);
+
+  color: #ffffff;
+
+  backdrop-filter:
+    blur(8px);
+
+  -webkit-backdrop-filter:
+    blur(8px);
+
+  cursor: pointer;
+
+  transition:
+    color 0.35s ease,
+    background 0.35s ease,
+    border-color 0.35s ease;
+}
+
+
+.navbar-scrolled .mobile-menu-button {
+  color: #173325;
+
+  background:
+    rgba(255, 255, 255, 0.52);
+
+  border-color:
+    rgba(23, 51, 37, 0.18);
+}
+
+
+/* =====================================================
+   MOBILE MENU OPEN
+===================================================== */
+
+.site-navbar.menu-is-open {
+  color: #173325;
+}
+
+
+.site-navbar.menu-is-open .mobile-menu-button {
+  color: #173325;
+
+  background:
+    rgba(255, 255, 255, 0.75);
+
+  border-color:
+    rgba(23, 51, 37, 0.2);
+}
+
+
+/* =====================================================
+   MOBILE NAVIGATION
+===================================================== */
+
+.mobile-navigation {
+  position: fixed;
+
+  top: 0;
+
+  left: 0;
+
+  width: 100%;
+
+  height: 100svh;
+
+  padding:
+    100px 28px 28px;
+
+  display: none;
+
+  flex-direction: column;
+
+  background:
+    #f4f0e6;
+
+  color: #173125;
+
+  pointer-events: none;
+
+  overflow-y: auto;
+
+  z-index: 9998;
+}
+
+
+/* =====================================================
+   MOBILE MENU TOP
+===================================================== */
+
+.mobile-menu-top {
+  margin-bottom: 20px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  color: #8c968f;
+
+  font-size: 8px;
+
+  font-weight: 600;
+
+  letter-spacing: 1.5px;
+}
+
+
+/* =====================================================
+   MOBILE LINKS
+===================================================== */
+
+.mobile-nav-link {
+  width: 100%;
+
+  min-height: 76px;
+
+  display: grid;
+
+  grid-template-columns:
+    35px 1fr 25px;
+
+  align-items: center;
+
+  gap: 10px;
+
+  border-bottom:
+    1px solid rgba(23, 49, 37, 0.12);
+
+  color: #173125;
+
+  text-decoration: none;
+
+  transition:
+    padding-left 0.35s ease,
+    color 0.35s ease;
+}
+
+
+.mobile-nav-link>span {
+  color: #919c94;
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  font-size: 9px;
+
+  letter-spacing: 1px;
+}
+
+
+.mobile-nav-link strong {
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: 31px;
+
+  line-height: 1;
+
+  font-weight: 400;
+}
+
+
+.mobile-nav-link>svg {
+  width: 18px;
+
+  opacity: 0.35;
+
+  transition:
+    transform 0.35s ease,
+    opacity 0.35s ease;
+}
+
+
+.mobile-nav-link:hover,
+.mobile-nav-link.active {
+  padding-left: 8px;
+
+  color: #0b5234;
+}
+
+
+.mobile-nav-link:hover>svg,
+.mobile-nav-link.active>svg {
+  opacity: 1;
+
+  transform:
+    translate(3px, -3px);
+}
+
+
+/* =====================================================
+   MOBILE BOOK
+===================================================== */
+
+.mobile-booking-button {
+  margin-top: auto;
+
+  min-height: 70px;
+
+  padding: 0 18px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  background: #143c29;
+
+  color: #ffffff;
+
+  text-decoration: none;
+
+  border-radius: 3px;
+}
+
+
+.mobile-booking-button>div {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 3px;
+}
+
+
+.mobile-booking-button small {
+  color:
+    rgba(255, 255, 255, 0.65);
+
+  font-size: 7px;
+
+  letter-spacing: 1.4px;
+}
+
+
+.mobile-booking-button span {
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: 17px;
+}
+
+
+/* =====================================================
+   MOBILE BOTTOM
+===================================================== */
+
+.mobile-menu-bottom {
+  margin-top: 15px;
+
+  padding-top: 14px;
+
+  display: flex;
+
+  justify-content: space-between;
+
+  color: #8d978f;
+
+  font-size: 7px;
+
+  letter-spacing: 1.1px;
+
+  text-transform: uppercase;
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 1050px) {
+
+  .navbar-container {
+    width:
+      min(100% - 38px, 1400px);
+  }
+
+  .desktop-navigation {
+    gap: 25px;
+  }
+
+  .nav-link {
+    font-size: 11px;
+  }
+
+  .booking-button {
+    padding: 0 13px;
+  }
+
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 768px) {
+
+  .desktop-navigation,
+  .booking-button {
+    display: none;
+  }
+
+
+  .mobile-menu-button {
+    display: flex;
+  }
+
+
+  .navbar-container {
+    width:
+      calc(100% - 30px);
+
+    height: 70px;
+  }
+
+
+  .brand-mark {
+    width: 31px;
+
+    height: 38px;
+  }
+
+
+  .brand-mark svg {
+    width: 30px;
+
+    height: 37px;
+  }
+
+
+  .brand-text span {
+    font-size: 17px;
+
+    letter-spacing: 2.2px;
+  }
+
+
+  .brand-text small {
+    font-size: 6px;
+
+    letter-spacing: 2.8px;
+  }
+
+}
+
+
+/* =====================================================
+   SMALL MOBILE
+===================================================== */
+
+@media (max-width: 420px) {
+
+  .navbar-container {
+    width:
+      calc(100% - 22px);
+  }
+
+
+  .brand-mark {
+    width: 28px;
+  }
+
+
+  .brand-mark svg {
+    width: 27px;
+  }
+
+
+  .brand-text span {
+    font-size: 15px;
+
+    letter-spacing: 2px;
+  }
+
+
+  .brand-text small {
+    font-size: 6px;
+
+    letter-spacing: 2.3px;
+  }
+
+
+  .mobile-menu-button {
+    width: 39px;
+
+    height: 39px;
+  }
+
+
+  .mobile-navigation {
+    padding:
+      92px 21px 23px;
+  }
+
+
+  .mobile-nav-link {
+    min-height: 68px;
+
+    grid-template-columns:
+      30px 1fr 22px;
+  }
+
+
+  .mobile-nav-link strong {
+    font-size: 27px;
+  }
+
+
+  .mobile-booking-button {
+    min-height: 62px;
+  }
+
+}

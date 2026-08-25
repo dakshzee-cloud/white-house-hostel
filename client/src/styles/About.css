@@ -1,0 +1,1010 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Libre+Baskerville:wght@400;700&display=swap");
+
+/* =====================================================
+   ROOT
+===================================================== */
+
+.about-page {
+  --green: #153c28;
+  --dark-green: #0b291b;
+  --cream: #f7f3e9;
+  --cream-two: #f0ebdf;
+  --text: #151c17;
+  --muted: #626b64;
+  --border: #ddd8cc;
+
+  width: 100%;
+
+  overflow: hidden;
+
+  background: var(--cream);
+
+  color: var(--text);
+
+  font-family: "DM Sans", sans-serif;
+}
+
+.about-page *,
+.about-page *::before,
+.about-page *::after {
+  box-sizing: border-box;
+}
+
+.about-page img {
+  width: 100%;
+  display: block;
+}
+
+.about-page svg {
+  fill: none;
+
+  stroke: currentColor;
+
+  stroke-linecap: round;
+
+  stroke-linejoin: round;
+}
+
+.about-container {
+  width: min(1180px, calc(100% - 70px));
+
+  margin: 0 auto;
+}
+
+.about-label {
+  display: block;
+
+  margin-bottom: 10px;
+
+  color: #405448;
+
+  font-size: 8px;
+
+  line-height: 1;
+
+  font-weight: 700;
+
+  letter-spacing: 1.5px;
+}
+
+/* =====================================================
+   HERO
+===================================================== */
+
+.about-hero {
+  position: relative;
+
+  height: 390px;
+
+  overflow: hidden;
+
+  color: white;
+}
+
+.about-hero-image {
+  position: absolute;
+
+  inset: -7% 0 0;
+
+  width: 100%;
+
+  height: 115%;
+
+  object-fit: cover;
+
+  object-position: center 55%;
+
+  will-change: transform;
+}
+
+.about-hero-overlay {
+  position: absolute;
+
+  inset: 0;
+
+  background:
+    linear-gradient(90deg,
+      rgba(3, 14, 8, 0.8) 0%,
+      rgba(3, 14, 8, 0.52) 38%,
+      rgba(3, 14, 8, 0.08) 78%),
+    linear-gradient(to top,
+      rgba(3, 12, 7, 0.35),
+      transparent);
+}
+
+.about-hero-content {
+  position: relative;
+
+  z-index: 3;
+
+  height: 100%;
+
+  padding-top: 48px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: center;
+
+  will-change: transform, opacity;
+}
+
+.about-hero-label {
+  margin: 0 0 15px;
+
+  font-size: 12px;
+
+  letter-spacing: 0.2px;
+}
+
+.about-hero-title {
+  margin: 0;
+
+  font-family:
+    "Libre Baskerville",
+    Georgia,
+    serif;
+
+  font-size: clamp(45px, 4.8vw, 67px);
+
+  line-height: 1.03;
+
+  letter-spacing: -2px;
+
+  font-weight: 400;
+}
+
+.about-title-mask {
+  display: block;
+
+  overflow: hidden;
+}
+
+.about-title-mask>span {
+  display: block;
+}
+
+.about-hero-description {
+  margin: 22px 0 0;
+
+  color: rgba(255, 255, 255, 0.92);
+
+  font-size: 12px;
+
+  line-height: 1.75;
+}
+
+/* =====================================================
+   STORY
+===================================================== */
+
+.about-story {
+  padding: 50px 0 40px;
+
+  background: #f7f4ec;
+}
+
+.about-story-layout {
+  display: grid;
+
+  grid-template-columns: 1fr 1.05fr;
+
+  gap: 50px;
+
+  align-items: center;
+}
+
+.about-story-image-wrap {
+  height: 430px;
+
+  overflow: hidden;
+
+  border-radius: 9px;
+
+  will-change: transform, clip-path;
+}
+
+.about-story-image {
+  width: 100%;
+
+  height: 112%;
+
+  object-fit: cover;
+
+  will-change: transform;
+}
+
+.about-story-copy {
+  padding-right: 20px;
+}
+
+.about-story-copy h2 {
+  margin: 0 0 18px;
+
+  font-family:
+    "Libre Baskerville",
+    Georgia,
+    serif;
+
+  font-size: clamp(31px, 3vw, 42px);
+
+  line-height: 1.12;
+
+  letter-spacing: -1.4px;
+
+  font-weight: 700;
+}
+
+.about-story-copy>p {
+  margin: 0 0 13px;
+
+  max-width: 540px;
+
+  color: #4e5a52;
+
+  font-size: 10px;
+
+  line-height: 1.7;
+}
+
+/* =====================================================
+   STATS
+===================================================== */
+
+.about-stats {
+  margin-top: 30px;
+
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.about-stat {
+  position: relative;
+
+  min-height: 125px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+
+  text-align: center;
+}
+
+.about-stat:not(:last-child)::after {
+  content: "";
+
+  position: absolute;
+
+  right: 0;
+
+  top: 10px;
+
+  height: 105px;
+
+  width: 1px;
+
+  background: #d7d4ca;
+}
+
+.about-stat-icon {
+  margin-bottom: 8px;
+
+  color: var(--green);
+}
+
+.about-stat-icon svg {
+  width: 27px;
+
+  height: 27px;
+
+  stroke-width: 1.7;
+}
+
+.about-stat strong {
+  font-family:
+    "Libre Baskerville",
+    Georgia,
+    serif;
+
+  font-size: 24px;
+
+  font-weight: 700;
+}
+
+.about-stat span {
+  margin-top: 5px;
+
+  color: #525d55;
+
+  font-size: 8px;
+
+  line-height: 1.45;
+}
+
+/* =====================================================
+   MISSION
+===================================================== */
+
+.about-mission {
+  padding: 28px 0 35px;
+
+  background: #f0ebdf;
+}
+
+.about-heading {
+  margin-bottom: 25px;
+
+  text-align: center;
+}
+
+.about-heading h2 {
+  margin: 0;
+
+  font-family:
+    "Libre Baskerville",
+    Georgia,
+    serif;
+
+  font-size: 30px;
+
+  line-height: 1.2;
+}
+
+.mission-grid {
+  display: grid;
+
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.mission-card {
+  position: relative;
+
+  padding: 12px 25px 18px;
+
+  text-align: center;
+}
+
+.mission-card:not(:last-child)::after {
+  content: "";
+
+  position: absolute;
+
+  right: 0;
+
+  top: 8px;
+
+  width: 1px;
+
+  height: 130px;
+
+  background: #d7d2c6;
+}
+
+.mission-icon {
+  width: 42px;
+
+  height: 42px;
+
+  margin: 0 auto 12px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  color: var(--green);
+}
+
+.mission-icon svg {
+  width: 37px;
+
+  height: 37px;
+
+  stroke-width: 1.7;
+}
+
+.mission-card h3 {
+  margin: 0 0 8px;
+
+  font-family:
+    "Libre Baskerville",
+    Georgia,
+    serif;
+
+  font-size: 15px;
+}
+
+.mission-card p {
+  max-width: 215px;
+
+  margin: 0 auto;
+
+  color: #576159;
+
+  font-size: 8px;
+
+  line-height: 1.65;
+}
+
+/* =====================================================
+   DIFFERENCE
+===================================================== */
+
+.about-difference {
+  padding: 25px 0 30px;
+
+  background: #f6f2e9;
+}
+
+.difference-heading {
+  text-align: center;
+
+  margin-bottom: 18px;
+}
+
+.difference-grid {
+  display: grid;
+
+  grid-template-columns: repeat(5, 1fr);
+
+  gap: 13px;
+}
+
+.difference-card {
+  min-height: 142px;
+
+  padding: 18px 15px;
+
+  background: #f9f6ef;
+
+  text-align: center;
+
+  transition:
+    transform 0.4s ease,
+    box-shadow 0.4s ease,
+    background 0.4s ease;
+}
+
+.difference-card:hover {
+  transform: translateY(-7px);
+
+  background: white;
+
+  box-shadow:
+    0 15px 40px rgba(18, 50, 33, 0.08);
+}
+
+.difference-icon {
+  width: 37px;
+
+  height: 37px;
+
+  margin: 0 auto 10px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: var(--green);
+
+  color: white;
+}
+
+.difference-icon svg {
+  width: 19px;
+
+  height: 19px;
+
+  stroke-width: 1.6;
+}
+
+.difference-card h3 {
+  margin: 0 0 7px;
+
+  font-family:
+    "Libre Baskerville",
+    Georgia,
+    serif;
+
+  font-size: 12px;
+}
+
+.difference-card p {
+  margin: 0;
+
+  color: #5d675f;
+
+  font-size: 7px;
+
+  line-height: 1.6;
+}
+
+/* =====================================================
+   TEAM
+===================================================== */
+
+.about-team {
+  padding: 5px 0 35px;
+
+  background: #f6f2e9;
+}
+
+.team-heading {
+  margin-bottom: 17px;
+
+  text-align: center;
+}
+
+.team-grid {
+  display: grid;
+
+  grid-template-columns: repeat(4, 1fr);
+
+  gap: 25px;
+}
+
+.team-card {
+  text-align: center;
+
+  padding: 8px 10px 5px;
+}
+
+.team-image {
+  width: 82px;
+
+  height: 82px;
+
+  margin: 0 auto 10px;
+
+  overflow: hidden;
+
+  border-radius: 50%;
+}
+
+.team-image img {
+  width: 100%;
+
+  height: 100%;
+
+  object-fit: cover;
+
+  transition: transform 0.55s ease;
+}
+
+.team-card:hover .team-image img {
+  transform: scale(1.08);
+}
+
+.team-card h3 {
+  margin: 0 0 4px;
+
+  font-family:
+    "Libre Baskerville",
+    Georgia,
+    serif;
+
+  font-size: 10px;
+}
+
+.team-card p {
+  margin: 0 0 8px;
+
+  color: #697269;
+
+  font-size: 7px;
+}
+
+.team-socials {
+  display: flex;
+
+  justify-content: center;
+
+  gap: 8px;
+}
+
+.team-socials button {
+  width: 19px;
+
+  height: 19px;
+
+  padding: 0;
+
+  border: none;
+
+  background: transparent;
+
+  color: #122f20;
+
+  cursor: pointer;
+}
+
+.team-socials svg {
+  width: 13px;
+
+  height: 13px;
+}
+
+/* =====================================================
+   CTA
+===================================================== */
+
+.about-bottom-cta {
+  background: #153d29;
+
+  color: white;
+}
+
+.about-bottom-cta-content {
+  min-height: 125px;
+
+  display: grid;
+
+  grid-template-columns: 0.7fr 1.25fr 1fr;
+
+  gap: 35px;
+
+  align-items: center;
+}
+
+.about-cta-art {
+  height: 105px;
+
+  opacity: 0.2;
+}
+
+.about-cta-art svg {
+  width: 160px;
+
+  height: 100%;
+
+  stroke: white;
+
+  stroke-width: 1;
+}
+
+.about-cta-copy h2 {
+  margin: 0 0 7px;
+
+  font-family:
+    "Libre Baskerville",
+    Georgia,
+    serif;
+
+  font-size: 25px;
+
+  line-height: 1.03;
+
+  font-weight: 400;
+}
+
+.about-cta-copy p {
+  margin: 0;
+
+  color: #c1ccc4;
+
+  font-size: 8px;
+
+  line-height: 1.45;
+}
+
+.about-cta-button {
+  justify-self: end;
+
+  min-width: 245px;
+
+  min-height: 51px;
+
+  padding: 0 20px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 13px;
+
+  background: #eee1ca;
+
+  color: #183b2a;
+
+  text-decoration: none;
+
+  font-size: 10px;
+
+  font-weight: 600;
+
+  transition:
+    transform 0.35s ease,
+    background 0.35s ease;
+}
+
+.about-cta-button svg {
+  width: 15px;
+
+  height: 15px;
+
+  stroke-width: 1.8;
+
+  transition: transform 0.35s ease;
+}
+
+.about-cta-button:hover {
+  transform: translateY(-3px);
+
+  background: white;
+}
+
+.about-cta-button:hover svg {
+  transform: translateX(4px);
+}
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 1000px) {
+  .about-container {
+    width: calc(100% - 50px);
+  }
+
+  .about-story-layout {
+    gap: 35px;
+  }
+
+  .difference-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .team-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 768px) {
+  .about-container {
+    width: calc(100% - 36px);
+  }
+
+  /* HERO */
+
+  .about-hero {
+    height: 470px;
+  }
+
+  .about-hero-image {
+    object-position: 60% center;
+  }
+
+  .about-hero-overlay {
+    background:
+      linear-gradient(to right,
+        rgba(3, 14, 8, 0.74),
+        rgba(3, 14, 8, 0.38));
+  }
+
+  .about-hero-content {
+    padding-top: 80px;
+
+    justify-content: flex-end;
+
+    padding-bottom: 45px;
+  }
+
+  .about-hero-title {
+    font-size: 44px;
+  }
+
+  .about-hero-description {
+    font-size: 10px;
+  }
+
+  /* STORY */
+
+  .about-story {
+    padding: 45px 0;
+  }
+
+  .about-story-layout {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 35px;
+  }
+
+  .about-story-image-wrap {
+    width: 100%;
+
+    height: 400px;
+  }
+
+  .about-story-copy {
+    padding-right: 0;
+  }
+
+  .about-story-copy h2 {
+    font-size: 34px;
+  }
+
+  .about-story-copy>p {
+    font-size: 9px;
+  }
+
+  .about-stat {
+    min-height: 110px;
+  }
+
+  /* MISSION */
+
+  .about-mission {
+    padding: 40px 0;
+  }
+
+  .mission-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .mission-card {
+    padding: 25px 18px;
+  }
+
+  .mission-card::after {
+    display: none;
+  }
+
+  .mission-card:nth-child(1),
+  .mission-card:nth-child(2) {
+    border-bottom: 1px solid #d7d2c6;
+  }
+
+  /* DIFFERENCE */
+
+  .difference-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* CTA */
+
+  .about-bottom-cta-content {
+    padding: 35px 0;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 22px;
+  }
+
+  .about-cta-art {
+    display: none;
+  }
+
+  .about-cta-button {
+    justify-self: auto;
+  }
+}
+
+/* =====================================================
+   SMALL MOBILE
+===================================================== */
+
+@media (max-width: 480px) {
+  .about-container {
+    width: calc(100% - 28px);
+  }
+
+  .about-hero {
+    height: 440px;
+  }
+
+  .about-hero-title {
+    font-size: 38px;
+
+    letter-spacing: -1.5px;
+  }
+
+  .about-story-image-wrap {
+    height: 330px;
+  }
+
+  .about-story-copy h2 {
+    font-size: 30px;
+  }
+
+  .about-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .about-stat {
+    min-height: 95px;
+
+    border-bottom: 1px solid #ddd8cd;
+  }
+
+  .about-stat:last-child {
+    border-bottom: 0;
+  }
+
+  .about-stat::after {
+    display: none;
+  }
+
+  .about-heading h2 {
+    font-size: 25px;
+  }
+
+  .mission-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .mission-card {
+    border-bottom: 1px solid #ddd8cc !important;
+  }
+
+  .mission-card:last-child {
+    border-bottom: 0 !important;
+  }
+
+  .difference-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .difference-card {
+    min-height: 135px;
+  }
+
+  .team-grid {
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 20px 10px;
+  }
+
+  .team-image {
+    width: 72px;
+
+    height: 72px;
+  }
+
+  .about-cta-copy h2 {
+    font-size: 22px;
+  }
+
+  .about-cta-button {
+    width: 100%;
+
+    min-width: 0;
+  }
+}
+
+/* =====================================================
+   REDUCE MOTION
+===================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .about-page *,
+  .about-page *::before,
+  .about-page *::after {
+    animation-duration: 0.01ms !important;
+
+    transition-duration: 0.01ms !important;
+  }
+}
