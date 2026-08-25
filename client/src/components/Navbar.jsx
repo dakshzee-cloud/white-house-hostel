@@ -432,7 +432,7 @@ useGSAP(
         </NavLink>
 
         <NavLink
-          to="/contact"
+          to="/BookStay"
           onClick={closeMenu}
           ref={(el) => {
             mobileLinksRef.current[3] = el;
@@ -443,7 +443,7 @@ useGSAP(
         >
           <span>04</span>
 
-          <strong>Contact</strong>
+          <strong>BookStay</strong>
 
           <ArrowUpRight />
         </NavLink>

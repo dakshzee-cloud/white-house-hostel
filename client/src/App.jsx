@@ -7,30 +7,36 @@ import About from "./pages/About";
 import Gallery from "./pages/Gallery";
 import BookStay from "./pages/BookStay";
 
-import ScrollToTop from "./components/ScrollToTop";
+import Dashboard from "./admin/Dashboard";
 
-import Dashboard from "../src/admin/Dashboard"
+import PageTransition from "./components/PageTransition";
 
+import "./styles/PageTransition.css";
 
 function App() {
   return (
     <BrowserRouter>
-      <ScrollToTop />
+      <PageTransition />
 
       <Routes>
+        {/* ===============================
+            WEBSITE
+        =============================== */}
+
         <Route element={<MainLayout />}>
-          {/* HOME */}
           <Route path="/" element={<Home />} />
 
-          {/* GALLERY */}
           <Route path="/gallery" element={<Gallery />} />
 
-          {/* ABOUT */}
           <Route path="/about" element={<About />} />
 
-          {/* BOOK YOUR STAY */}
+
           <Route path="/BookStay" element={<BookStay />} />
         </Route>
+
+        {/* ===============================
+            ADMIN
+        =============================== */}
 
         <Route path="/admin/dashboard" element={<Dashboard />} />
       </Routes>
